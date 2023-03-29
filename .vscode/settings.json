@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "./trainers"
+    ],
+    "docify.commentService.docstringFormat": "Google",
+    "docify.commentService.sidePanelReviewMode": true
+}

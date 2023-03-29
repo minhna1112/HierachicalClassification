@@ -1,0 +1,23 @@
+{
+    "filename_1": {
+        "genus" : {
+            "name": "genus_1",
+            "idx": 1
+        },
+        "specie" : {
+            "name": "specie_3",
+            "idx" : 3
+        }
+    },
+
+    "filename_101": {
+        "genus" : {
+            "name": "genus_5",
+            "idx": 5
+        },
+        "specie" : {
+            "name": "specie_3",
+            "idx" : 15
+        }
+    }
+}
