@@ -34,8 +34,8 @@ class Infer():
         self.net = HierachicalClassifier(genus_mapper)
         self.net.load_state_dict(torch.load(weight_path))
         self.genuses = [genus["genus"] for (i, genus) in enumerate(genus_mapper)]
-        self.species = [specie for specie in [[specie for specie in genus["species"]] for genus in genus_mapper]]    
-
+        self.species = [specie for specie in [[specie for specie in genus["species"]] for genus in genus_mapper]][0]    
+        
     def run(self, image_path: str):
         """
          Loads and transforms an image. This is the main entry point for the pipeline. It takes a path to an image and transforms it to a 3 - dimentional tensor of shape ( height width 3 )
@@ -53,8 +53,8 @@ class Infer():
             genus_preds = tensor2label(genus_preds)
             spec_preds = tensor2label(spec_preds)
 
-            print(f"Predicted Genus: {genus_preds[0]} of {genus_preds[1]*100} %") 
-            print(f"Predicted Specie: {spec_preds[0]} of {spec_preds[1]*100} %")            
+            print(f"Predicted Genus: {self.genuses[genus_preds[0]]} of {genus_preds[1]*100} %") 
+            print(f"Predicted Specie: {self.species[spec_preds[0]]} of {spec_preds[1]*100} %")            
 
 if __name__=="__main__":
 
