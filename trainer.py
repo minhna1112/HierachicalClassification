@@ -15,6 +15,7 @@ from tqdm import tqdm
 
 class Trainer():
     def __init__(self,
+        data_path: str,
         batch_size: int,
         split_ratio: float,
         output_types : str,
@@ -39,7 +40,7 @@ class Trainer():
 
 
         # data
-        self.dataset = HierachicalDataset("/mnt/d/minhna1112/data/hier_plants", genus_mapper) 
+        self.dataset = HierachicalDataset(data_path, genus_mapper) 
         # data loader
         self.batch_loaders = create_dataloaders(dataset=self.dataset, 
                                                 split_ratio=split_ratio, 

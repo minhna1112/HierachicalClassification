@@ -1,7 +1,9 @@
 from trainer import Trainer
 
 
-kwargs = {"batch_size": 16,
+kwargs = {
+        "data_path": "",
+        "batch_size": 16,
         "split_ratio": 0.7,
         "output_types" : "probs",
         "freeze" :  True,
